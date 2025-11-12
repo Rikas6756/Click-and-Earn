@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>!! SYSTEM ALERT !!</title>
+  <style>
+    :root{--bg:#070607;--red:#ff2b2b;--muted:#bdbdbd}
+    html,body{height:100%;margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:linear-gradient(180deg,#070607,#0f0f10);color:#fff}
+    .wrap{min-height:100%;display:flex;align-items:center;justify-content:center;padding:36px;box-sizing:border-box}
+    .card{max-width:900px;width:100%;text-align:center;padding:34px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);backdrop-filter:blur(4px)}
+    .title{font-size:48px;letter-spacing:2px;font-weight:900;color:var(--red);text-shadow:0 6px 30px rgba(255,43,43,0.12)}
+    .sub{margin-top:10px;color:var(--muted);font-size:16px}
+    .skull{font-size:92px;margin:18px 0;opacity:0.95}
+    .reveal{display:none;margin-top:22px;background:#fff;color:#111;border-radius:10px;padding:20px;box-shadow:0 10px 40px rgba(0,0,0,0.6)}
+    .reveal h2{margin:0 0 6px 0}
+    .btn{display:inline-block;margin-top:14px;padding:10px 16px;border-radius:8px;border:0;cursor:pointer;font-weight:600}
+    .btn-close{background:#1f2937;color:#fff}
+    .note{margin-top:12px;color:#666;font-size:13px}
+    img{max-width:100%;border-radius:8px;margin-top:12px}
+    footer{margin-top:18px;color:#8b8b8b;font-size:12px}
+    @media (max-width:520px){.title{font-size:32px}.skull{font-size:64px}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card" role="main" aria-live="polite">
+      <div id="splash">
+        <div class="skull">💀</div>
+        <div class="title">SYSTEM COMPROMISED</div>
+        <div class="sub">All files encrypted. Not a drill. Your cookies are probably crying.</div>
+        <div class="note">Attempting to exfiltrate your dignity…</div>
+      </div>
+
+      <div id="reveal" class="reveal" aria-hidden="true">
+        <h2>Okay — breathe. It's a prank. 😅</h2>
+        <p>That ominous nonsense was staged. No files were touched, nothing was encrypted, and your dignity is only moderately irritated.</p>
+        <p style="margin-top:8px">If you were startled — sorry! This is meant as dark humour only. Please forgive the theatrics.</p>
+        <img src="https://media.giphy.com/media/26BRv0ThflsHCqDrG/giphy.gif" alt="Sheepish shrug GIF" />
+        <div style="margin-top:10px">
+          <button class="btn btn-close" id="closeBtn">I'm a good sport — close</button>
+        </div>
+        <p class="note">If this upset you, delete the file and accept this apology. Use responsibly.</p>
+      </div>
+
+      <footer>Prank created for laughs (not real). — Be kind, not cruel.</footer>
+    </div>
+  </div>
+
+  <script>
+    // Very short dramatic pause, then reveal — keep it clearly a joke.
+    setTimeout(function(){
+      document.getElementById('splash').style.display = 'none';
+      var r = document.getElementById('reveal');
+      r.style.display = 'block';
+      r.setAttribute('aria-hidden','false');
+    }, 1200);
+
+    document.getElementById('closeBtn').addEventListener('click', function(){
+      try { window.close(); } catch(e) { alert("All good — thanks for being a sport!"); }
+    });
+  </script>
+</body>
+</html>
